@@ -1,5 +1,5 @@
 //
-//  SchemeBackoff.swift
+//  BackOffState.swift
 //  BackOff
 //
 //  Created by NghiaTran on 11/16/17.
@@ -8,8 +8,10 @@
 
 import Foundation
 
-protocol SchemeBackOffType {
+enum BackOffState {
     
-    var maxRetryCount: Int { get }
-    var timming: BackOffAlgorithm { get }
+    case running
+    case stopped
+    case failed
+    case succeeded
 }

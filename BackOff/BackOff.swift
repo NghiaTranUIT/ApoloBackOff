@@ -7,3 +7,23 @@
 //
 
 import Foundation
+
+protocol BackOffType {
+    
+    func run()
+}
+
+class BackOff: BackOffType{
+    
+    let block: BackOffDispatcherBlock
+    let algorithm: BackOffAlgorithm
+    
+    init(algorithm: BackOffAlgorithm, block: BackOffDispatcherBlock) {
+        self.algorithm = algorithm
+        self.block = block
+    }
+    
+    func run() {
+        algorithm.execute(self)
+    }
+}

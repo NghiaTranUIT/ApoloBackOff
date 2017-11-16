@@ -9,5 +9,10 @@
 import Foundation
 
 protocol BackOffAlgorithm {
+
+    var state: BackOffState { get }
     
+    func stop()
+    func reset()
+    func execute(backOff: BackOffType)
 }
