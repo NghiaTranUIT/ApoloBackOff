@@ -1,15 +1,15 @@
 //
-//  BackOffTests.swift
-//  BackOffTests
+//  BackoffTests.swift
+//  BackoffTests
 //
 //  Created by NghiaTran on 11/16/17.
 //  Copyright © 2017 Zalora. All rights reserved.
 //
 
 import XCTest
-@testable import BackOff
+@testable import Backoff
 
-class BackOffTests: XCTestCase {
+class BackoffTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
