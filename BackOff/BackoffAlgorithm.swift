@@ -9,6 +9,7 @@
 import Foundation
 
 protocol BackoffAlgorithm {
+    
     func reset()
-    func moveNextStep() -> Int
+    func next(at step: Int) -> Double
 }

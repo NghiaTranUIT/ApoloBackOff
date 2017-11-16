@@ -16,16 +16,17 @@ protocol BackoffType {
 
 class Backoff: BackoffType {
     
-    private let block: BackoffDispatcherBlock
+    private let completion: BackoffDispatcherBlock
     private let algorithm: BackoffAlgorithm
-    private let maxCount = 10
     private var executedBlock: dispatch_block_t?
-    private(set) var state: BackoffState = .stopped
-    private(set) var attempt = 0
     
-    init(algorithm: BackoffAlgorithm, block: BackoffDispatcherBlock) {
+    private let maxAttemp: Int
+    private var attempt = 0
+    
+    init(algorithm: BackoffAlgorithm, maxAttemp: Int, completion: BackoffDispatcherBlock) {
+        self.maxAttemp = maxAttemp
         self.algorithm = algorithm
-        self.block = block
+        self.completion = completion
     }
     
     func reset() {
@@ -38,21 +39,30 @@ class Backoff: BackoffType {
     }
     
     func run() {
-        
-        attempt += 1
-        
-        guard attempt < maxCount else  {
+        guard attempt <= maxAttemp else  {
             print("Excessed max count at attemp \(attempt)")
             return;
         }
         
-        // Execute
-        let delay = algorithm.moveNextStep()
+        // Generate next step
+        attempt += 1
+        let delay = algorithm.next(at: attempt)
         print("... delay \(delay)")
         
         // Cancellabe Block
-        executedBlock = dispatch_block_create(DISPATCH_BLOCK_INHERIT_QOS_CLASS) {[unowned self] in
-            self.block(self.attempt, { [unowned self] (success) in
+        executedBlock = createBlock()
+        
+        // Time
+        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(UInt64(delay) * NSEC_PER_SEC))
+        dispatch_after(time, dispatch_get_main_queue(), executedBlock!)
+    }
+}
+
+extension Backoff {
+    
+    private func createBlock() -> dispatch_block_t {
+        return dispatch_block_create(DISPATCH_BLOCK_INHERIT_QOS_CLASS) {[unowned self] in
+            self.completion(self.attempt, { [unowned self] (success) in
                 if success {
                     print("Success at attemp = \(self.attempt)")
                     self.reset()
@@ -61,9 +71,5 @@ class Backoff: BackoffType {
                 }
             })
         }
-        
-        // Time
-        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay * Int(NSEC_PER_SEC)))
-        dispatch_after(time, dispatch_get_main_queue(), executedBlock!)
     }
 }
