@@ -14,13 +14,14 @@ final class FibonacciAlgorithm: BackoffAlgorithm {
     private(set) var state: BackoffState = .stopped
     private(set) var attempt = 0
     private let fibonaci = [1, 1, 2, 3, 5, 8, 11, 19, 23]
-    
-    func stop() {
-        
-    }
+    private var executedBlock: dispatch_block_t?
     
     func reset() {
-        
+        if let executedBlock = executedBlock {
+            print("--- Reset block")
+            dispatch_block_cancel(executedBlock)
+        }
+        attempt = 0
     }
     
     func execute(backOff: BackoffType, completion: BackoffDispatcherBlock) {
@@ -36,7 +37,7 @@ final class FibonacciAlgorithm: BackoffAlgorithm {
         let delay = fibonaci[attempt]
         print("... delay \(delay)")
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(delay * Int(NSEC_PER_SEC))), dispatch_get_main_queue()) {
+        executedBlock = dispatch_block_create(DISPATCH_BLOCK_INHERIT_QOS_CLASS) {
             completion(self.attempt, { [unowned self] (success) in
                 if success {
                     // Do nothing
@@ -46,5 +47,7 @@ final class FibonacciAlgorithm: BackoffAlgorithm {
                 }
             })
         }
+        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay * Int(NSEC_PER_SEC)))
+        dispatch_after(time, dispatch_get_main_queue(), executedBlock!)
     }
 }

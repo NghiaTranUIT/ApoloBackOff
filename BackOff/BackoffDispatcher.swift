@@ -12,19 +12,24 @@ typealias BackoffDispatcherBlock = (Int, ((Bool) -> Void)) -> ()
 
 protocol BackoffDispatcherType {
     
-    func dispatch(algorithm: BackoffAlgorithm, block: BackoffDispatcherBlock)
+    func dispatch(identity: String, algorithm: BackoffAlgorithm, block: BackoffDispatcherBlock)
 }
 
 class BackoffDispatcher: BackoffDispatcherType {
     
     static let shared = BackoffDispatcher()
-    private(set) var dispatchers: [BackoffType] = []
+    private(set) var dispatchers: [String: BackoffType] = [:]
     
-    func dispatch(algorithm: BackoffAlgorithm, block: BackoffDispatcherBlock) {
+    func dispatch(identity: String, algorithm: BackoffAlgorithm, block: BackoffDispatcherBlock) {
         
-        // Create backoff
+        if let backoff = dispatchers[identity] {
+            backoff.reset()
+            backoff.run()
+            return
+        }
+        
         let backoff = Backoff(algorithm: algorithm, block: block)
-        dispatchers.append(backoff)
+        dispatchers[identity] = backoff
         
         // Run
         backoff.run()
@@ -34,8 +39,8 @@ class BackoffDispatcher: BackoffDispatcherType {
 
 extension BackoffDispatcher {
     
-    func dispatchExponential(block: BackoffDispatcherBlock) {
+    func dispatchFibonacci(identity: String, block: BackoffDispatcherBlock) {
         let algo = FibonacciAlgorithm()
-        dispatch(algo, block: block)
+        dispatch(identity, algorithm: algo, block: block)
     }
 }

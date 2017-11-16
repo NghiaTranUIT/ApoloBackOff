@@ -12,7 +12,6 @@ protocol BackoffAlgorithm {
 
     var state: BackoffState { get }
     
-    func stop()
     func reset()
     func execute(backOff: BackoffType, completion: BackoffDispatcherBlock)
 }

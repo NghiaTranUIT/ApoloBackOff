@@ -10,6 +10,7 @@ import Foundation
 
 protocol BackoffType {
     
+    func reset()
     func run()
 }
 
@@ -25,5 +26,9 @@ class Backoff: BackoffType {
     
     func run() {
         algorithm.execute(self, completion: block)
+    }
+    
+    func reset() {
+        algorithm.reset()
     }
 }
