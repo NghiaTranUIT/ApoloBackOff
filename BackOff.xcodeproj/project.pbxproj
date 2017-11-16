@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BA2413201FBD82FD00BDB792 /* BackoffState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA24131F1FBD82FD00BDB792 /* BackoffState.swift */; };
 		BA2413221FBD84F100BDB792 /* FibonacciAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2413211FBD84F100BDB792 /* FibonacciAlgorithm.swift */; };
+		BA3E8D0B1FBDF22C00AFA936 /* LogarithmicAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3E8D0A1FBDF22C00AFA936 /* LogarithmicAlgorithm.swift */; };
 		BA50BF851FBDE28100B55956 /* ExponentialAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50BF841FBDE28100B55956 /* ExponentialAlgorithm.swift */; };
 		BAC62F401FBD74F9003A37D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC62F3F1FBD74F9003A37D9 /* AppDelegate.swift */; };
 		BAC62F421FBD74F9003A37D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC62F411FBD74F9003A37D9 /* ViewController.swift */; };
@@ -32,8 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BA24131F1FBD82FD00BDB792 /* BackoffState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackoffState.swift; sourceTree = "<group>"; };
 		BA2413211FBD84F100BDB792 /* FibonacciAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FibonacciAlgorithm.swift; sourceTree = "<group>"; };
+		BA3E8D0A1FBDF22C00AFA936 /* LogarithmicAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogarithmicAlgorithm.swift; sourceTree = "<group>"; };
 		BA50BF841FBDE28100B55956 /* ExponentialAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExponentialAlgorithm.swift; sourceTree = "<group>"; };
 		BAC62F3C1FBD74F9003A37D9 /* BackOff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackOff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAC62F3F1FBD74F9003A37D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,10 +89,10 @@
 		BAC62F3E1FBD74F9003A37D9 /* BackOff */ = {
 			isa = PBXGroup;
 			children = (
+				BA3E8D0A1FBDF22C00AFA936 /* LogarithmicAlgorithm.swift */,
 				BA50BF841FBDE28100B55956 /* ExponentialAlgorithm.swift */,
 				BA2413211FBD84F100BDB792 /* FibonacciAlgorithm.swift */,
 				BAC62F651FBD75B5003A37D9 /* BackoffAlgorithm.swift */,
-				BA24131F1FBD82FD00BDB792 /* BackoffState.swift */,
 				BAC62F5F1FBD754E003A37D9 /* Backoff.swift */,
 				BAC62F611FBD755B003A37D9 /* BackoffDispatcher.swift */,
 				BAC62F3F1FBD74F9003A37D9 /* AppDelegate.swift */,
@@ -218,11 +218,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA2413221FBD84F100BDB792 /* FibonacciAlgorithm.swift in Sources */,
-				BA2413201FBD82FD00BDB792 /* BackoffState.swift in Sources */,
 				BAC62F421FBD74F9003A37D9 /* ViewController.swift in Sources */,
 				BA50BF851FBDE28100B55956 /* ExponentialAlgorithm.swift in Sources */,
 				BAC62F621FBD755B003A37D9 /* BackoffDispatcher.swift in Sources */,
 				BAC62F661FBD75B5003A37D9 /* BackoffAlgorithm.swift in Sources */,
+				BA3E8D0B1FBDF22C00AFA936 /* LogarithmicAlgorithm.swift in Sources */,
 				BAC62F601FBD754E003A37D9 /* Backoff.swift in Sources */,
 				BAC62F401FBD74F9003A37D9 /* AppDelegate.swift in Sources */,
 			);
