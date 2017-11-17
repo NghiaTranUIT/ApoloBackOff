@@ -12,7 +12,7 @@ final class ExponentialAlgorithm: BackoffAlgorithm {
     
     private let initialInterval: Double
     
-    init(initialInterval: Double) {
+    init(initialInterval: Double = 0.5) {
         self.initialInterval = initialInterval
     }
     

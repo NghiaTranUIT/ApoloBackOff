@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     }
     
     func callSyncAPI() {
-        BackoffDispatcher.shared.dispatchFibonacci("WishListSync") {[unowned self] (attempt, completion) in
+        BackoffDispatcher.dispatchUserInitiated("WishListSync") {[unowned self] (attempt, completion) in
             
             print("---------------------------")
             let randomNumber = arc4random_uniform(100)

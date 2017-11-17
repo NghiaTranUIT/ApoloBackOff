@@ -7,18 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BA2413221FBD84F100BDB792 /* FibonacciAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2413211FBD84F100BDB792 /* FibonacciAlgorithm.swift */; };
-		BA3E8D0B1FBDF22C00AFA936 /* LogarithmicAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3E8D0A1FBDF22C00AFA936 /* LogarithmicAlgorithm.swift */; };
-		BA50BF851FBDE28100B55956 /* ExponentialAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50BF841FBDE28100B55956 /* ExponentialAlgorithm.swift */; };
+		BA1476671FBF10A8009CBD5A /* Backoff.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA14765E1FBF10A8009CBD5A /* Backoff.swift */; };
+		BA1476681FBF10A8009CBD5A /* BackoffAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA14765F1FBF10A8009CBD5A /* BackoffAlgorithm.swift */; };
+		BA1476691FBF10A8009CBD5A /* BackoffDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1476601FBF10A8009CBD5A /* BackoffDispatcher.swift */; };
+		BA14766A1FBF10A8009CBD5A /* ExponentialAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1476611FBF10A8009CBD5A /* ExponentialAlgorithm.swift */; };
+		BA14766B1FBF10A8009CBD5A /* FibonacciAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1476621FBF10A8009CBD5A /* FibonacciAlgorithm.swift */; };
+		BA14766C1FBF10A8009CBD5A /* InternalTriggerRetryPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1476631FBF10A8009CBD5A /* InternalTriggerRetryPolicy.swift */; };
+		BA14766D1FBF10A8009CBD5A /* LogarithmicAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1476641FBF10A8009CBD5A /* LogarithmicAlgorithm.swift */; };
+		BA14766E1FBF10A8009CBD5A /* RetryPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1476651FBF10A8009CBD5A /* RetryPolicy.swift */; };
+		BA14766F1FBF10A8009CBD5A /* UserInitiatedRetryPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1476661FBF10A8009CBD5A /* UserInitiatedRetryPolicy.swift */; };
+		BA1476761FBF10E0009CBD5A /* BackoffDispatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1476701FBF10E0009CBD5A /* BackoffDispatcherTests.swift */; };
+		BA1476771FBF10E0009CBD5A /* BackoffTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1476711FBF10E0009CBD5A /* BackoffTests.swift */; };
+		BA1476781FBF10E0009CBD5A /* ExponentialAlgorithmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1476721FBF10E0009CBD5A /* ExponentialAlgorithmTests.swift */; };
+		BA1476791FBF10E0009CBD5A /* InternalTriggerRetryPolicyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1476731FBF10E0009CBD5A /* InternalTriggerRetryPolicyTest.swift */; };
+		BA14767A1FBF10E0009CBD5A /* LogarithmicAlgorithmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1476741FBF10E0009CBD5A /* LogarithmicAlgorithmTests.swift */; };
+		BA14767B1FBF10E0009CBD5A /* UserInitiatedRetryPolicyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1476751FBF10E0009CBD5A /* UserInitiatedRetryPolicyTests.swift */; };
 		BAC62F401FBD74F9003A37D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC62F3F1FBD74F9003A37D9 /* AppDelegate.swift */; };
 		BAC62F421FBD74F9003A37D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC62F411FBD74F9003A37D9 /* ViewController.swift */; };
 		BAC62F451FBD74F9003A37D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAC62F431FBD74F9003A37D9 /* Main.storyboard */; };
 		BAC62F471FBD74F9003A37D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAC62F461FBD74F9003A37D9 /* Assets.xcassets */; };
 		BAC62F4A1FBD74F9003A37D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAC62F481FBD74F9003A37D9 /* LaunchScreen.storyboard */; };
-		BAC62F551FBD74F9003A37D9 /* BackOffTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC62F541FBD74F9003A37D9 /* BackOffTests.swift */; };
-		BAC62F601FBD754E003A37D9 /* Backoff.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC62F5F1FBD754E003A37D9 /* Backoff.swift */; };
-		BAC62F621FBD755B003A37D9 /* BackoffDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC62F611FBD755B003A37D9 /* BackoffDispatcher.swift */; };
-		BAC62F661FBD75B5003A37D9 /* BackoffAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC62F651FBD75B5003A37D9 /* BackoffAlgorithm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,9 +40,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BA2413211FBD84F100BDB792 /* FibonacciAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FibonacciAlgorithm.swift; sourceTree = "<group>"; };
-		BA3E8D0A1FBDF22C00AFA936 /* LogarithmicAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogarithmicAlgorithm.swift; sourceTree = "<group>"; };
-		BA50BF841FBDE28100B55956 /* ExponentialAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExponentialAlgorithm.swift; sourceTree = "<group>"; };
+		BA14765E1FBF10A8009CBD5A /* Backoff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Backoff.swift; sourceTree = "<group>"; };
+		BA14765F1FBF10A8009CBD5A /* BackoffAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackoffAlgorithm.swift; sourceTree = "<group>"; };
+		BA1476601FBF10A8009CBD5A /* BackoffDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackoffDispatcher.swift; sourceTree = "<group>"; };
+		BA1476611FBF10A8009CBD5A /* ExponentialAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExponentialAlgorithm.swift; sourceTree = "<group>"; };
+		BA1476621FBF10A8009CBD5A /* FibonacciAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FibonacciAlgorithm.swift; sourceTree = "<group>"; };
+		BA1476631FBF10A8009CBD5A /* InternalTriggerRetryPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternalTriggerRetryPolicy.swift; sourceTree = "<group>"; };
+		BA1476641FBF10A8009CBD5A /* LogarithmicAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogarithmicAlgorithm.swift; sourceTree = "<group>"; };
+		BA1476651FBF10A8009CBD5A /* RetryPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetryPolicy.swift; sourceTree = "<group>"; };
+		BA1476661FBF10A8009CBD5A /* UserInitiatedRetryPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInitiatedRetryPolicy.swift; sourceTree = "<group>"; };
+		BA1476701FBF10E0009CBD5A /* BackoffDispatcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackoffDispatcherTests.swift; sourceTree = "<group>"; };
+		BA1476711FBF10E0009CBD5A /* BackoffTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackoffTests.swift; sourceTree = "<group>"; };
+		BA1476721FBF10E0009CBD5A /* ExponentialAlgorithmTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExponentialAlgorithmTests.swift; sourceTree = "<group>"; };
+		BA1476731FBF10E0009CBD5A /* InternalTriggerRetryPolicyTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternalTriggerRetryPolicyTest.swift; sourceTree = "<group>"; };
+		BA1476741FBF10E0009CBD5A /* LogarithmicAlgorithmTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogarithmicAlgorithmTests.swift; sourceTree = "<group>"; };
+		BA1476751FBF10E0009CBD5A /* UserInitiatedRetryPolicyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInitiatedRetryPolicyTests.swift; sourceTree = "<group>"; };
 		BAC62F3C1FBD74F9003A37D9 /* BackOff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackOff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAC62F3F1FBD74F9003A37D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAC62F411FBD74F9003A37D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,11 +63,7 @@
 		BAC62F491FBD74F9003A37D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BAC62F4B1FBD74F9003A37D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAC62F501FBD74F9003A37D9 /* BackOffTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BackOffTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BAC62F541FBD74F9003A37D9 /* BackOffTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackOffTests.swift; sourceTree = "<group>"; };
 		BAC62F561FBD74F9003A37D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BAC62F5F1FBD754E003A37D9 /* Backoff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Backoff.swift; sourceTree = "<group>"; };
-		BAC62F611FBD755B003A37D9 /* BackoffDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackoffDispatcher.swift; sourceTree = "<group>"; };
-		BAC62F651FBD75B5003A37D9 /* BackoffAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackoffAlgorithm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,12 +105,15 @@
 		BAC62F3E1FBD74F9003A37D9 /* BackOff */ = {
 			isa = PBXGroup;
 			children = (
-				BA3E8D0A1FBDF22C00AFA936 /* LogarithmicAlgorithm.swift */,
-				BA50BF841FBDE28100B55956 /* ExponentialAlgorithm.swift */,
-				BA2413211FBD84F100BDB792 /* FibonacciAlgorithm.swift */,
-				BAC62F651FBD75B5003A37D9 /* BackoffAlgorithm.swift */,
-				BAC62F5F1FBD754E003A37D9 /* Backoff.swift */,
-				BAC62F611FBD755B003A37D9 /* BackoffDispatcher.swift */,
+				BA14765E1FBF10A8009CBD5A /* Backoff.swift */,
+				BA14765F1FBF10A8009CBD5A /* BackoffAlgorithm.swift */,
+				BA1476601FBF10A8009CBD5A /* BackoffDispatcher.swift */,
+				BA1476611FBF10A8009CBD5A /* ExponentialAlgorithm.swift */,
+				BA1476621FBF10A8009CBD5A /* FibonacciAlgorithm.swift */,
+				BA1476631FBF10A8009CBD5A /* InternalTriggerRetryPolicy.swift */,
+				BA1476641FBF10A8009CBD5A /* LogarithmicAlgorithm.swift */,
+				BA1476651FBF10A8009CBD5A /* RetryPolicy.swift */,
+				BA1476661FBF10A8009CBD5A /* UserInitiatedRetryPolicy.swift */,
 				BAC62F3F1FBD74F9003A37D9 /* AppDelegate.swift */,
 				BAC62F411FBD74F9003A37D9 /* ViewController.swift */,
 				BAC62F431FBD74F9003A37D9 /* Main.storyboard */,
@@ -108,7 +127,12 @@
 		BAC62F531FBD74F9003A37D9 /* BackOffTests */ = {
 			isa = PBXGroup;
 			children = (
-				BAC62F541FBD74F9003A37D9 /* BackOffTests.swift */,
+				BA1476701FBF10E0009CBD5A /* BackoffDispatcherTests.swift */,
+				BA1476711FBF10E0009CBD5A /* BackoffTests.swift */,
+				BA1476721FBF10E0009CBD5A /* ExponentialAlgorithmTests.swift */,
+				BA1476731FBF10E0009CBD5A /* InternalTriggerRetryPolicyTest.swift */,
+				BA1476741FBF10E0009CBD5A /* LogarithmicAlgorithmTests.swift */,
+				BA1476751FBF10E0009CBD5A /* UserInitiatedRetryPolicyTests.swift */,
 				BAC62F561FBD74F9003A37D9 /* Info.plist */,
 			);
 			path = BackOffTests;
@@ -168,6 +192,7 @@
 					};
 					BAC62F4F1FBD74F9003A37D9 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						TestTargetID = BAC62F3B1FBD74F9003A37D9;
 					};
@@ -217,13 +242,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA2413221FBD84F100BDB792 /* FibonacciAlgorithm.swift in Sources */,
+				BA1476681FBF10A8009CBD5A /* BackoffAlgorithm.swift in Sources */,
+				BA1476671FBF10A8009CBD5A /* Backoff.swift in Sources */,
 				BAC62F421FBD74F9003A37D9 /* ViewController.swift in Sources */,
-				BA50BF851FBDE28100B55956 /* ExponentialAlgorithm.swift in Sources */,
-				BAC62F621FBD755B003A37D9 /* BackoffDispatcher.swift in Sources */,
-				BAC62F661FBD75B5003A37D9 /* BackoffAlgorithm.swift in Sources */,
-				BA3E8D0B1FBDF22C00AFA936 /* LogarithmicAlgorithm.swift in Sources */,
-				BAC62F601FBD754E003A37D9 /* Backoff.swift in Sources */,
+				BA14766A1FBF10A8009CBD5A /* ExponentialAlgorithm.swift in Sources */,
+				BA14766F1FBF10A8009CBD5A /* UserInitiatedRetryPolicy.swift in Sources */,
+				BA14766C1FBF10A8009CBD5A /* InternalTriggerRetryPolicy.swift in Sources */,
+				BA1476691FBF10A8009CBD5A /* BackoffDispatcher.swift in Sources */,
+				BA14766D1FBF10A8009CBD5A /* LogarithmicAlgorithm.swift in Sources */,
+				BA14766B1FBF10A8009CBD5A /* FibonacciAlgorithm.swift in Sources */,
+				BA14766E1FBF10A8009CBD5A /* RetryPolicy.swift in Sources */,
 				BAC62F401FBD74F9003A37D9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,7 +260,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAC62F551FBD74F9003A37D9 /* BackOffTests.swift in Sources */,
+				BA14767A1FBF10E0009CBD5A /* LogarithmicAlgorithmTests.swift in Sources */,
+				BA1476781FBF10E0009CBD5A /* ExponentialAlgorithmTests.swift in Sources */,
+				BA1476771FBF10E0009CBD5A /* BackoffTests.swift in Sources */,
+				BA14767B1FBF10E0009CBD5A /* UserInitiatedRetryPolicyTests.swift in Sources */,
+				BA1476791FBF10E0009CBD5A /* InternalTriggerRetryPolicyTest.swift in Sources */,
+				BA1476761FBF10E0009CBD5A /* BackoffDispatcherTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,11 +419,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = BackOffTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fe.BackOffTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BackOff.app/BackOff";
 			};
 			name = Debug;
@@ -400,11 +435,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = BackOffTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fe.BackOffTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BackOff.app/BackOff";
 			};
 			name = Release;

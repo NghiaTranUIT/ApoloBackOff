@@ -12,7 +12,7 @@ typealias BackoffDispatcherBlock = (Int, ((Bool) -> Void)) -> ()
 
 protocol BackoffDispatcherType {
     
-    func dispatch(identity: String, maxAttemp: Int, algorithm: BackoffAlgorithm, completion: BackoffDispatcherBlock)
+    func dispatch(identity: String, policy: RetryPolicy, completion: BackoffDispatcherBlock)
 }
 
 class BackoffDispatcher: BackoffDispatcherType {
@@ -20,27 +20,32 @@ class BackoffDispatcher: BackoffDispatcherType {
     static let shared = BackoffDispatcher()
     private(set) var dispatchers: [String: BackoffType] = [:]
     
-    func dispatch(identity: String, maxAttemp: Int, algorithm: BackoffAlgorithm, completion: BackoffDispatcherBlock) {
+    func dispatch(identity: String, policy: RetryPolicy, completion: BackoffDispatcherBlock) {
         
         if let backoff = dispatchers[identity] {
             backoff.reset()
-            backoff.run()
+            backoff.run(completion)
             return
         }
         
-        let backoff = Backoff(algorithm: algorithm, maxAttemp: maxAttemp, completion: completion)
+        let backoff = Backoff(policy: policy)
         dispatchers[identity] = backoff
         
         // Run
-        backoff.run()
+        backoff.run(completion)
     }
 }
 
 
 extension BackoffDispatcher {
     
-    func dispatchFibonacci(identity: String, completion: BackoffDispatcherBlock) {
-        let algo = FibonacciAlgorithm()
-        dispatch(identity, maxAttemp: 10, algorithm: algo, completion: completion)
+    class func dispatchInternalTrigger(identity: String, completion: BackoffDispatcherBlock) {
+        let policy = InternalTriggerRetryPolicy()
+        shared.dispatch(identity, policy: policy, completion: completion)
+    }
+    
+    class func dispatchUserInitiated(identity: String, completion: BackoffDispatcherBlock) {
+        let policy = UserInitiatedRetryPolicy()
+        shared.dispatch(identity, policy: policy, completion: completion)
     }
 }

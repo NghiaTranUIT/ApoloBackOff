@@ -12,13 +12,14 @@ class LogarithmicAlgorithm: BackoffAlgorithm {
     
     private let initialInterval: Double
     
-    init(initialInterval: Double) {
+    init(initialInterval: Double = 0.5) {
         self.initialInterval = initialInterval
     }
     
     func reset() {}
     
     func next(at step: Int) -> Double {
+        guard step >= 0 else { fatalError("Invalid")}
         return initialInterval * log2(Double(step))
     }
 }
