@@ -22,6 +22,7 @@
 		BA1476791FBF10E0009CBD5A /* InternalTriggerRetryPolicyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1476731FBF10E0009CBD5A /* InternalTriggerRetryPolicyTest.swift */; };
 		BA14767A1FBF10E0009CBD5A /* LogarithmicAlgorithmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1476741FBF10E0009CBD5A /* LogarithmicAlgorithmTests.swift */; };
 		BA14767B1FBF10E0009CBD5A /* UserInitiatedRetryPolicyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1476751FBF10E0009CBD5A /* UserInitiatedRetryPolicyTests.swift */; };
+		BA1476811FBF131E009CBD5A /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1476801FBF131E009CBD5A /* FeedViewController.m */; };
 		BAC62F401FBD74F9003A37D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC62F3F1FBD74F9003A37D9 /* AppDelegate.swift */; };
 		BAC62F421FBD74F9003A37D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC62F411FBD74F9003A37D9 /* ViewController.swift */; };
 		BAC62F451FBD74F9003A37D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAC62F431FBD74F9003A37D9 /* Main.storyboard */; };
@@ -55,6 +56,9 @@
 		BA1476731FBF10E0009CBD5A /* InternalTriggerRetryPolicyTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternalTriggerRetryPolicyTest.swift; sourceTree = "<group>"; };
 		BA1476741FBF10E0009CBD5A /* LogarithmicAlgorithmTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogarithmicAlgorithmTests.swift; sourceTree = "<group>"; };
 		BA1476751FBF10E0009CBD5A /* UserInitiatedRetryPolicyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInitiatedRetryPolicyTests.swift; sourceTree = "<group>"; };
+		BA14767E1FBF131E009CBD5A /* BackOff-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BackOff-Bridging-Header.h"; sourceTree = "<group>"; };
+		BA14767F1FBF131E009CBD5A /* FeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
+		BA1476801FBF131E009CBD5A /* FeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
 		BAC62F3C1FBD74F9003A37D9 /* BackOff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackOff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAC62F3F1FBD74F9003A37D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAC62F411FBD74F9003A37D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +124,9 @@
 				BAC62F461FBD74F9003A37D9 /* Assets.xcassets */,
 				BAC62F481FBD74F9003A37D9 /* LaunchScreen.storyboard */,
 				BAC62F4B1FBD74F9003A37D9 /* Info.plist */,
+				BA14767F1FBF131E009CBD5A /* FeedViewController.h */,
+				BA1476801FBF131E009CBD5A /* FeedViewController.m */,
+				BA14767E1FBF131E009CBD5A /* BackOff-Bridging-Header.h */,
 			);
 			path = BackOff;
 			sourceTree = "<group>";
@@ -188,6 +195,7 @@
 				TargetAttributes = {
 					BAC62F3B1FBD74F9003A37D9 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					BAC62F4F1FBD74F9003A37D9 = {
@@ -252,6 +260,7 @@
 				BA14766D1FBF10A8009CBD5A /* LogarithmicAlgorithm.swift in Sources */,
 				BA14766B1FBF10A8009CBD5A /* FibonacciAlgorithm.swift in Sources */,
 				BA14766E1FBF10A8009CBD5A /* RetryPolicy.swift in Sources */,
+				BA1476811FBF131E009CBD5A /* FeedViewController.m in Sources */,
 				BAC62F401FBD74F9003A37D9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,10 +403,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = BackOff/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fe.BackOff;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BackOff/BackOff-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
@@ -406,10 +418,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = BackOff/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fe.BackOff;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BackOff/BackOff-Bridging-Header.h";
 				SWIFT_VERSION = 2.3;
 			};
 			name = Release;

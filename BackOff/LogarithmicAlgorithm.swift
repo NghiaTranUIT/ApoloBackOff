@@ -8,7 +8,7 @@
 
 import Foundation
 
-class LogarithmicAlgorithm: BackoffAlgorithm {
+final class LogarithmicAlgorithm: BackoffAlgorithm {
     
     private let initialInterval: Double
     

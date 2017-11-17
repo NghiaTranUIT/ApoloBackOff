@@ -15,7 +15,8 @@ protocol BackoffDispatcherType {
     func dispatch(identity: String, policy: RetryPolicy, completion: BackoffDispatcherBlock)
 }
 
-class BackoffDispatcher: BackoffDispatcherType {
+@objc
+final class BackoffDispatcher: NSObject, BackoffDispatcherType {
     
     static let shared = BackoffDispatcher()
     private(set) var dispatchers: [String: BackoffType] = [:]

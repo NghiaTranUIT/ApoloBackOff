@@ -14,7 +14,7 @@ protocol BackoffType {
     func run(completion: BackoffDispatcherBlock)
 }
 
-class Backoff: BackoffType {
+final class Backoff: BackoffType {
 
     enum State {
         case Running

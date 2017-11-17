@@ -8,7 +8,7 @@
 
 import Foundation
 
-class InternalTriggerRetryPolicy: RetryPolicy {
+final class InternalTriggerRetryPolicy: RetryPolicy {
     
     var maxAttempt: Int {
         return 3

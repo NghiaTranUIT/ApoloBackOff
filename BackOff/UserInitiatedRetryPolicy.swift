@@ -8,7 +8,7 @@
 
 import Foundation
 
-class UserInitiatedRetryPolicy: RetryPolicy {
+final class UserInitiatedRetryPolicy: RetryPolicy {
     
     var maxAttempt: Int {
         return 20
